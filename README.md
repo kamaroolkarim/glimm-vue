@@ -1,14 +1,14 @@
 # glimm-vue
 
-[![Live demo](https://img.shields.io/badge/demo-kamaroolkarim.github.io%2Fglimm--vue-242529)](https://kamaroolkarim.github.io/glimm-vue/)
-
 > [!IMPORTANT]
 > **This is an unofficial community port** — a Vue 3 fork of
 > [`glimm`](https://www.npmjs.com/package/glimm) by Noman Ijaz. It is not
 > affiliated with or endorsed by the original author. All credit for the
 > shaders, palette math, and transition design goes to the original project;
 > behavior is ported 1:1 from it. If you use React or Next.js, use the
-> original [`glimm`](https://www.npmjs.com/package/glimm).
+> original [`glimm`](https://www.npmjs.com/package/glimm). Minor API
+> translations: `<TransitionLink>` takes `to` instead of `href`, and
+> `useTransitionRouter().refresh()` maps to `router.go(0)`.
 
 WebGL **sweep transitions** for Vue 3. A colour band sweeps across the viewport,
 your page swaps underneath it at the midpoint, then the band fades out — the iOS
@@ -140,41 +140,6 @@ Alternate looks: `createMeshShader` (vertex-displaced mesh) and
 
 Import the provider and hooks from a **single** entry point per app so they
 share one injection context.
-
-## Differences from the original
-
-- `<TransitionLink>` wraps vue-router's `<RouterLink>` (prop is `to`, not `href`).
-- `useTransitionRouter().refresh()` maps to `router.go(0)` — vue-router has no
-  direct equivalent of Next.js's `router.refresh()`.
-
-## Development
-
-```bash
-npm install         # workspaces: packages/glimm-vue + playground
-npm run typecheck   # tsc --noEmit
-npm test            # vitest
-npm run build       # tsup (package)
-npm run dev         # playground (Vite)
-```
-
-### Publishing
-
-Requires the `NPM_TOKEN` repository secret (an npm *Automation* token from
-your [npmjs.com](https://www.npmjs.com) account) — set once under
-Settings → Secrets and variables → Actions.
-
-Push a version tag — or let CI pick the next version for you:
-
-```bash
-# Option 1: fully automatic (Actions tab → Release → Run workflow → choose patch/minor/major)
-gh workflow run release -f bump=patch
-
-# Option 2: manual tag
-git tag v0.1.1 && git push origin v0.1.1
-```
-
-CI runs tests, builds with tsup, publishes to the npm registry, and pushes
-the git tag. The playground deploys to GitHub Pages on every push to main.
 
 ## License
 

@@ -49,6 +49,8 @@ jobs:
       - run: npm run typecheck
       - run: npm test
       - run: npm run build
+      - name: Include README in package
+        run: cp README.md packages/glimm-vue/README.md
       - run: npm publish -w packages/glimm-vue
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
