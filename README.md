@@ -2,9 +2,17 @@
 
 [![Live demo](https://img.shields.io/badge/demo-kamaroolkarim.github.io%2Fglimm--vue-242529)](https://kamaroolkarim.github.io/glimm-vue/)
 
-WebGL **sweep transitions** for Vue 3. A Vue port of [glimm](https://glimm.dev) by Noman Ijaz (MIT). A colour band sweeps across
-the viewport, your page swaps underneath it at the midpoint, then the band fades
-out — the iOS "name drop" feel, as a page transition.
+> [!IMPORTANT]
+> **This is an unofficial community port** — a Vue 3 fork of
+> [`glimm`](https://www.npmjs.com/package/glimm) by Noman Ijaz. It is not
+> affiliated with or endorsed by the original author. All credit for the
+> shaders, palette math, and transition design goes to the original project;
+> behavior is ported 1:1 from it. If you use React or Next.js, use the
+> original [`glimm`](https://www.npmjs.com/package/glimm).
+
+WebGL **sweep transitions** for Vue 3. A colour band sweeps across the viewport,
+your page swaps underneath it at the midpoint, then the band fades out — the iOS
+"name drop" feel, as a page transition.
 
 - **Framework-agnostic core** — drive the shader directly from vanilla JS.
 - **Vue adapter** — `<GlimmProvider>` + `useGlimm()`.
@@ -12,18 +20,14 @@ out — the iOS "name drop" feel, as a page transition.
 - Zero runtime dependencies. WebGL only — no CSS, no assets.
 - Respects `prefers-reduced-motion` and degrades gracefully when WebGL is unavailable.
 
-Behavior is ported 1:1 from the original `glimm` — same shaders, same palettes,
-same easing curves, same sweep choreography, same interception rules.
-
 ## Install
 
 ```bash
 npm install glimm-vue
 ```
 
-No configuration needed — `vue` and `vue-router` are optional peer
-dependencies; install whichever adapter you use. The core entry point needs
-neither.
+`vue` and `vue-router` are optional peer dependencies — install whichever adapter
+you use. The core entry point needs neither.
 
 ## Quick start (Vue + vue-router)
 
@@ -36,7 +40,6 @@ import { GlimmProvider, InterceptLinks } from 'glimm-vue/router'
 <template>
   <GlimmProvider palette="prism">
     <InterceptLinks />
-    <nav><!-- plain <a href> links are swept automatically --></nav>
     <RouterView />
   </GlimmProvider>
 </template>
@@ -129,10 +132,10 @@ Alternate looks: `createMeshShader` (vertex-displaced mesh) and
 
 ## Entry points
 
-| Import                            | Use for |
-| --------------------------------- | ------- |
-| `glimm-vue`        | Framework-agnostic core: shader factories, `playSweep`, palettes, easings, colour math. |
-| `glimm-vue/vue`    | `<GlimmProvider>` and `useGlimm()` for any Vue app. |
+| Import          | Use for |
+| --------------- | ------- |
+| `glimm-vue`     | Framework-agnostic core: shader factories, `playSweep`, palettes, easings, colour math. |
+| `glimm-vue/vue` | `<GlimmProvider>` and `useGlimm()` for any Vue app. |
 | `glimm-vue/router` | Everything in `glimm-vue/vue` plus `<TransitionLink>`, `useTransitionRouter()`, and `interceptLinks` / `<InterceptLinks>`. |
 
 Import the provider and hooks from a **single** entry point per app so they
@@ -150,7 +153,7 @@ share one injection context.
 npm install         # workspaces: packages/glimm-vue + playground
 npm run typecheck   # tsc --noEmit
 npm test            # vitest
-npm run build       # tsup (package) — CI builds on every push
+npm run build       # tsup (package)
 npm run dev         # playground (Vite)
 ```
 
@@ -173,9 +176,7 @@ git tag v0.1.1 && git push origin v0.1.1
 CI runs tests, builds with tsup, publishes to the npm registry, and pushes
 the git tag. The playground deploys to GitHub Pages on every push to main.
 
-## Credits & license
+## License
 
-Core shaders, palette math, and sweep choreography ported from
-[glimm](https://glimm.dev) by Noman Ijaz. Vue adapters by Kamarool Karim.
-
-[MIT](./LICENSE)
+[MIT](./LICENSE) © Noman Ijaz (original glimm) and Kamarool Karim (Vue port).
+Free to use, modify, and distribute.
