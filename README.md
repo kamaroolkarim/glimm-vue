@@ -1,5 +1,7 @@
 # glimm-vue
 
+[![npm](https://img.shields.io/npm/v/glimm-vue)](https://www.npmjs.com/package/glimm-vue)
+
 > [!IMPORTANT]
 > **This is an unofficial community port** — a Vue 3 fork of
 > [`glimm`](https://www.npmjs.com/package/glimm) by Noman Ijaz. It is not
