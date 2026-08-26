@@ -513,8 +513,8 @@ body:has(.glimm-page) .shell {
 
 .port-alert p {
   margin: 0;
-  font-size: 13px;
-  line-height: 20px;
+  font-size: 15px;
+  line-height: 23px;
   letter-spacing: -0.1px;
   color: #525252;
 }
