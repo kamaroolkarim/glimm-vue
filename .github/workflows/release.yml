@@ -2,7 +2,9 @@ name: Release
 
 on:
   push:
-    tags: ['v*']
+    tags:
+      - 'v*'
+      - '@kamaroolkarim/glimm-vue@*'
 
 jobs:
   publish:

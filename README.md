@@ -141,7 +141,7 @@ Alternate looks: `createMeshShader` (vertex-displaced mesh) and
 | --------------------------------- | ------- |
 | `@kamaroolkarim/glimm-vue`        | Framework-agnostic core: shader factories, `playSweep`, palettes, easings, colour math. |
 | `@kamaroolkarim/glimm-vue/vue`    | `<GlimmProvider>` and `useGlimm()` for any Vue app. |
-| `@kamaroolkarim/glimm-vue/router` | Everything in `glimm-vue/vue` plus `<TransitionLink>`, `useTransitionRouter()`, and `interceptLinks` / `<InterceptLinks>`. |
+| `@kamaroolkarim/glimm-vue/router` | Everything in `@kamaroolkarim/glimm-vue/vue` plus `<TransitionLink>`, `useTransitionRouter()`, and `interceptLinks` / `<InterceptLinks>`. |
 
 Import the provider and hooks from a **single** entry point per app so they
 share one injection context.
@@ -164,11 +164,15 @@ npm run dev         # playground (Vite)
 
 ### Publishing
 
-GitHub Packages publishes automatically via CI when you push a `v*` tag:
+GitHub Packages publishes automatically via CI when you push a version tag
+(either style works):
 
 ```bash
-npm version patch -w packages/glimm-vue
+npm version patch -w packages/glimm-vue   # creates @kamaroolkarim/glimm-vue@x.y.z tag
 git push --follow-tags
+
+# or manually:
+git tag v0.1.1 && git push origin v0.1.1
 ```
 
 ## Credits & license
