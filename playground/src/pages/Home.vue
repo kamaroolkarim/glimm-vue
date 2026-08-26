@@ -133,6 +133,17 @@ const PROPS: [string, string, string, string][] = [
         <div class="glimm-landing-shell">
           <div class="content-col">
             <div class="content">
+              <div class="port-alert">
+                <p class="alert-title">Important — unofficial community port</p>
+                <p class="alert-body">
+                  glimm-vue is a Vue 3 fork of
+                  <a href="https://www.npmjs.com/package/glimm" target="_blank" rel="noreferrer">glimm</a>
+                  by Noman Ijaz — not affiliated with or endorsed by the original author. All credit for the shaders,
+                  palette math, and transition design goes to the original project; behavior is ported 1:1.
+                  If you use React or Next.js, use the original
+                  <a href="https://www.npmjs.com/package/glimm" target="_blank" rel="noreferrer">glimm</a>.
+                </p>
+              </div>
               <div class="glimm-blueprint">
                 <img class="glimm-blueprint-img" src="/shader-diagram-v2.png" draggable="false" alt="" />
               </div>
@@ -491,12 +502,42 @@ body:has(.glimm-page) .shell {
   max-width: 634px;
 }
 
+.port-alert {
+  background: rgba(97, 85, 245, 0.05);
+  border: 0.5px solid rgba(97, 85, 245, 0.35);
+  border-left: 3px solid rgb(97, 85, 245);
+  border-radius: 10px;
+  padding: 13px 16px;
+  margin-bottom: 28px;
+}
+
+.port-alert p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: -0.1px;
+  color: #525252;
+}
+
+.port-alert .alert-title {
+  font-weight: 550;
+  color: #242529;
+  margin-bottom: 4px;
+}
+
+.port-alert a {
+  color: rgb(97, 85, 245);
+  font-weight: 500;
+  text-decoration-color: rgba(97, 85, 245, 0.3);
+  text-underline-offset: 2px;
+}
+
 .glimm-blueprint {
   position: relative;
   width: 100%;
   max-width: 634px;
   aspect-ratio: 1980 / 1114;
-  margin: -86px auto 80px;
+  margin: 8px auto 80px;
   border-radius: 12px;
   overflow: hidden;
   z-index: 42;
@@ -941,5 +982,19 @@ body:has(.glimm-page) .shell {
 .footer-name {
   color: #242529;
   font-weight: 500;
+}
+
+@media (max-width: 640px) {
+  .glimm-landing-main {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 132px;
+    padding-bottom: 56px;
+  }
+
+  .glimm-landing-shell {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 </style>
