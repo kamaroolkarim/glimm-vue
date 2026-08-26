@@ -1,6 +1,6 @@
 {
   "name": "glimm-vue",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "WebGL sweep transitions for Vue 3 + vue-router — a Vue port of glimm. Framework-agnostic core with Vue and vue-router adapters.",
   "keywords": [
     "webgl",
