@@ -988,8 +988,6 @@ body:has(.glimm-page) .shell {
   .glimm-landing-main {
     padding-left: 16px;
     padding-right: 16px;
-    padding-top: 132px;
-    padding-bottom: 56px;
   }
 
   .glimm-landing-shell {
