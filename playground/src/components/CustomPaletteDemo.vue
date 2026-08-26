@@ -3,7 +3,6 @@ import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { createShader, playSweep, shuffleAccentPalette } from 'glimm-vue'
 import type { Palette, ShaderController } from 'glimm-vue'
 import { useGlimm } from 'glimm-vue/router'
-import Icon from './Icon.vue'
 import CodeBlock from './CodeBlock.vue'
 import { VIGNETTE } from './palettes'
 
@@ -65,12 +64,12 @@ onBeforeUnmount(() => {
       <canvas ref="canvasRef" class="custom-canvas"></canvas>
       <div class="custom-vignette" :style="{ background: VIGNETTE }"></div>
       <button type="button" class="expand-btn" aria-label="Preview on page" @click="previewOnPage">
-        <Icon name="expand" :size="18" />
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-arrows-diagonal" style="display: block; flex-shrink: 0"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M16 4l4 0l0 4" /><path d="M14 10l6 -6" /><path d="M8 20l-4 0l0 -4" /><path d="M4 20l6 -6" /></svg>
       </button>
     </div>
     <div class="shuffle-row">
       <button type="button" class="glimm-press" aria-label="Shuffle a new palette" @click="shuffle">
-        <Icon name="shuffle" :size="14" />
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-arrows-shuffle" style="display: block; flex-shrink: 0"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 4l3 3l-3 3" /><path d="M18 20l3 -3l-3 -3" /><path d="M3 7h3a5 5 0 0 1 5 5a5 5 0 0 0 5 5h5" /><path d="M21 7h-5a4.978 4.978 0 0 0 -3 1m-4 8a4.984 4.984 0 0 1 -3 1h-3" /></svg>
         Shuffle
       </button>
     </div>
