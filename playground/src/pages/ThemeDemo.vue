@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import { PALETTES } from '@kamaroolkarim/glimm-vue'
-import type { PaletteName } from '@kamaroolkarim/glimm-vue'
-import { useGlimm } from '@kamaroolkarim/glimm-vue/router'
+import { PALETTES } from 'glimm-vue'
+import type { PaletteName } from 'glimm-vue'
+import { useGlimm } from 'glimm-vue/router'
 import { theme, toggleTheme } from '../theme'
 
 const { sweep } = useGlimm()

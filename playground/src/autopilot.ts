@@ -1,6 +1,6 @@
 import { onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { useTransitionRouter } from '@kamaroolkarim/glimm-vue/router'
+import { useTransitionRouter } from 'glimm-vue/router'
 
 export const AUTOPILOT_CYCLE = [
   { path: '/demos/publish', palette: 'citrus' },

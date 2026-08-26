@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useTransitionRouter } from '@kamaroolkarim/glimm-vue/router'
+import { useTransitionRouter } from 'glimm-vue/router'
 
 const { push } = useTransitionRouter()
 

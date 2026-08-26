@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import type { PaletteName } from '@kamaroolkarim/glimm-vue'
-import { useGlimm, TransitionLink } from '@kamaroolkarim/glimm-vue/router'
+import type { PaletteName } from 'glimm-vue'
+import { useGlimm, TransitionLink } from 'glimm-vue/router'
 import Wordmark from '../components/Wordmark.vue'
 import DemoBox from '../components/DemoBox.vue'
 import CommandRow from '../components/CommandRow.vue'
@@ -17,8 +17,8 @@ const { sweep } = useGlimm()
 
 const AGENT_PROMPT = `Add glimm-vue to my Vue app.
 
-1. Install it:  npm install @kamaroolkarim/glimm-vue
-2. In my App.vue, import { GlimmProvider, InterceptLinks } from '@kamaroolkarim/glimm-vue/router', wrap the app in <GlimmProvider palette="prism">, and render <InterceptLinks /> just inside it:
+1. Install it:  npm install glimm-vue
+2. In my App.vue, import { GlimmProvider, InterceptLinks } from 'glimm-vue/router', wrap the app in <GlimmProvider palette="prism">, and render <InterceptLinks /> just inside it:
 
    <GlimmProvider palette="prism">
      <InterceptLinks />
@@ -29,7 +29,7 @@ Keep the rest of my setup unchanged.`
 
 const QUICK_START = `// App.vue
 <script setup>
-import { GlimmProvider, InterceptLinks } from '@kamaroolkarim/glimm-vue/router'
+import { GlimmProvider, InterceptLinks } from 'glimm-vue/router'
 <\/script>
 
 <template>
@@ -43,7 +43,7 @@ import { GlimmProvider, InterceptLinks } from '@kamaroolkarim/glimm-vue/router'
 const TRIGGER_TABS = [
   {
     label: '<TransitionLink>',
-    code: `import { TransitionLink } from '@kamaroolkarim/glimm-vue/router'
+    code: `import { TransitionLink } from 'glimm-vue/router'
 
 <TransitionLink to="/about" :sweep="{ palette: 'berry' }">
   About
@@ -62,7 +62,7 @@ async function onSubmit() {
   },
   {
     label: '<InterceptLinks />',
-    code: `import { GlimmProvider, InterceptLinks } from '@kamaroolkarim/glimm-vue/router'
+    code: `import { GlimmProvider, InterceptLinks } from 'glimm-vue/router'
 
 <GlimmProvider palette="prism">
   <InterceptLinks />
@@ -145,7 +145,7 @@ const PROPS: [string, string, string, string][] = [
                   underneath as the band moves. It is GPU-composited, under 10 KB, and has zero performance impact.
                 </p>
                 <div class="hero-install">
-                  <CommandRow command="npm install @kamaroolkarim/glimm-vue" />
+                  <CommandRow command="npm install glimm-vue" />
                   <p class="peer-note">Zero runtime dependencies. Vue 3.3+ and vue-router 4.2+ are peer deps.</p>
                 </div>
               </div>
@@ -186,7 +186,7 @@ const PROPS: [string, string, string, string][] = [
                 </div>
                 <div class="section-body">
                   <div class="install-col">
-                    <CommandRow command="npm install @kamaroolkarim/glimm-vue" />
+                    <CommandRow command="npm install glimm-vue" />
                     <div class="agent-card">
                       <div class="agent-head">
                         <span class="agent-label">Tell your coding agent</span>

@@ -1,5 +1,5 @@
 {
-  "name": "@kamaroolkarim/glimm-vue",
+  "name": "glimm-vue",
   "version": "0.1.0",
   "description": "WebGL sweep transitions for Vue 3 + vue-router — a Vue port of glimm. Framework-agnostic core with Vue and vue-router adapters.",
   "keywords": [
@@ -75,6 +75,6 @@
   },
   "publishConfig": {
     "access": "public",
-    "registry": "https://npm.pkg.github.com"
+    "registry": "https://registry.npmjs.org"
   }
 }
