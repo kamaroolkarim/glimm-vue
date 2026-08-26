@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import { TransitionLink, useGlimm } from 'glimm-vue/router'
+import { TransitionLink, useGlimm } from '@kamaroolkarim/glimm-vue/router'
 
 type Task = { id: number; title: string; done: boolean }
 

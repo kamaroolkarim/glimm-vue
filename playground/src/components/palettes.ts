@@ -1,4 +1,4 @@
-import type { PaletteName } from 'glimm-vue'
+import type { PaletteName } from '@kamaroolkarim/glimm-vue'
 
 export type PaletteVisual = {
   name: PaletteName

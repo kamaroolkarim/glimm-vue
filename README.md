@@ -15,8 +15,19 @@ same easing curves, same sweep choreography, same interception rules.
 
 ## Install
 
+The package is published to GitHub Packages. First add a `.npmrc` next to your
+project's `package.json` (create a [personal access token](https://github.com/settings/tokens)
+with the `read:packages` scope):
+
+```
+@kamaroolkarim:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=YOUR_GITHUB_TOKEN
+```
+
+Then:
+
 ```bash
-npm install glimm-vue
+npm install @kamaroolkarim/glimm-vue
 ```
 
 `vue` and `vue-router` are optional peer dependencies — install whichever adapter
@@ -27,7 +38,7 @@ you use. The core entry point needs neither.
 ```vue
 <!-- App.vue -->
 <script setup lang="ts">
-import { GlimmProvider, InterceptLinks } from 'glimm-vue/router'
+import { GlimmProvider, InterceptLinks } from '@kamaroolkarim/glimm-vue/router'
 </script>
 
 <template>
@@ -46,7 +57,7 @@ link out with `data-glimm-skip`.
 
 ```vue
 <script setup lang="ts">
-import { TransitionLink, useTransitionRouter } from 'glimm-vue/router'
+import { TransitionLink, useTransitionRouter } from '@kamaroolkarim/glimm-vue/router'
 
 // Declarative — a drop-in <RouterLink> replacement:
 // <TransitionLink to="/about" :sweep="{ palette: 'berry', direction: 'rtl' }">About</TransitionLink>
@@ -64,7 +75,7 @@ async function onSubmit() {
 
 ```vue
 <script setup lang="ts">
-import { GlimmProvider, useGlimm } from 'glimm-vue/vue'
+import { GlimmProvider, useGlimm } from '@kamaroolkarim/glimm-vue/vue'
 
 const { sweep } = useGlimm()
 </script>
@@ -82,7 +93,7 @@ the midpoint, and returns a `{ midpoint, done, cancel }` handle.
 ## Vanilla / framework-agnostic core
 
 ```ts
-import { createShader, playSweep } from 'glimm-vue'
+import { createShader, playSweep } from '@kamaroolkarim/glimm-vue'
 
 const canvas = document.querySelector('canvas')!
 const ctrl = createShader({ canvas, /* palette, bandTight, direction */ })
@@ -126,11 +137,11 @@ Alternate looks: `createMeshShader` (vertex-displaced mesh) and
 
 ## Entry points
 
-| Import              | Use for |
-| ------------------- | ------- |
-| `glimm-vue`         | Framework-agnostic core: shader factories, `playSweep`, palettes, easings, colour math. |
-| `glimm-vue/vue`     | `<GlimmProvider>` and `useGlimm()` for any Vue app. |
-| `glimm-vue/router`  | Everything in `glimm-vue/vue` plus `<TransitionLink>`, `useTransitionRouter()`, and `interceptLinks` / `<InterceptLinks>`. |
+| Import                            | Use for |
+| --------------------------------- | ------- |
+| `@kamaroolkarim/glimm-vue`        | Framework-agnostic core: shader factories, `playSweep`, palettes, easings, colour math. |
+| `@kamaroolkarim/glimm-vue/vue`    | `<GlimmProvider>` and `useGlimm()` for any Vue app. |
+| `@kamaroolkarim/glimm-vue/router` | Everything in `glimm-vue/vue` plus `<TransitionLink>`, `useTransitionRouter()`, and `interceptLinks` / `<InterceptLinks>`. |
 
 Import the provider and hooks from a **single** entry point per app so they
 share one injection context.
@@ -147,8 +158,17 @@ share one injection context.
 npm install         # workspaces: packages/glimm-vue + playground
 npm run typecheck   # tsc --noEmit
 npm test            # vitest
-npm run build       # tsup (package) — blocked locally by permission rules; CI builds
+npm run build       # tsup (package) — CI builds on every push
 npm run dev         # playground (Vite)
+```
+
+### Publishing
+
+GitHub Packages publishes automatically via CI when you push a `v*` tag:
+
+```bash
+npm version patch -w packages/glimm-vue
+git push --follow-tags
 ```
 
 ## Credits & license

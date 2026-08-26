@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import { EASINGS } from 'glimm-vue'
-import type { EasingName } from 'glimm-vue'
-import { useGlimm } from 'glimm-vue/router'
+import { EASINGS } from '@kamaroolkarim/glimm-vue'
+import type { EasingName } from '@kamaroolkarim/glimm-vue'
+import { useGlimm } from '@kamaroolkarim/glimm-vue/router'
 
 const { sweep } = useGlimm()
 

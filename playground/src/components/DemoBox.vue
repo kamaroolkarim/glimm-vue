@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, ref } from 'vue'
-import { createShader, playSweep } from 'glimm-vue'
-import type { PaletteName, ShaderController } from 'glimm-vue'
-import { useGlimm } from 'glimm-vue/router'
+import { createShader, playSweep } from '@kamaroolkarim/glimm-vue'
+import type { PaletteName, ShaderController } from '@kamaroolkarim/glimm-vue'
+import { useGlimm } from '@kamaroolkarim/glimm-vue/router'
 import { PALETTE_VISUALS, VIGNETTE } from './palettes'
 
 const { sweep } = useGlimm()

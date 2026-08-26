@@ -7,9 +7,9 @@ export default defineConfig({
   plugins: [vue()],
   resolve: {
     alias: [
-      { find: /^glimm-vue\/router$/, replacement: pkg('router.ts') },
-      { find: /^glimm-vue\/vue$/, replacement: pkg('vue.ts') },
-      { find: /^glimm-vue$/, replacement: pkg('index.ts') },
+      { find: /^@kamaroolkarim\/glimm-vue\/router$/, replacement: pkg('router.ts') },
+      { find: /^@kamaroolkarim\/glimm-vue\/vue$/, replacement: pkg('vue.ts') },
+      { find: /^@kamaroolkarim\/glimm-vue$/, replacement: pkg('index.ts') },
     ],
   },
 })

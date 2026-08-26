@@ -1,5 +1,5 @@
 {
-  "name": "glimm-vue",
+  "name": "@kamaroolkarim/glimm-vue",
   "version": "0.1.0",
   "description": "WebGL sweep transitions for Vue 3 + vue-router — a Vue port of glimm. Framework-agnostic core with Vue and vue-router adapters.",
   "keywords": [
@@ -12,6 +12,10 @@
     "oklch"
   ],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kamaroolkarim/glimm-vue.git"
+  },
   "type": "module",
   "sideEffects": false,
   "main": "./dist/index.js",
@@ -70,6 +74,7 @@
     "node": ">=18"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://npm.pkg.github.com"
   }
 }

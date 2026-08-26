@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
-import { createShader, playSweep, shuffleAccentPalette } from 'glimm-vue'
-import type { Palette, ShaderController } from 'glimm-vue'
-import { useGlimm } from 'glimm-vue/router'
+import { createShader, playSweep, shuffleAccentPalette } from '@kamaroolkarim/glimm-vue'
+import type { Palette, ShaderController } from '@kamaroolkarim/glimm-vue'
+import { useGlimm } from '@kamaroolkarim/glimm-vue/router'
 import CodeBlock from './CodeBlock.vue'
 import { VIGNETTE } from './palettes'
 

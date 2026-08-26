@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { GlimmProvider, InterceptLinks } from 'glimm-vue/router'
+import { GlimmProvider, InterceptLinks } from '@kamaroolkarim/glimm-vue/router'
 import { useRoute } from 'vue-router'
 import { theme } from './theme'
 
