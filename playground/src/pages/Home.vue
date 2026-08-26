@@ -986,8 +986,8 @@ body:has(.glimm-page) .shell {
 
 @media (max-width: 640px) {
   .glimm-landing-main {
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 
   .glimm-landing-shell {
