@@ -1,0 +1,19 @@
+{
+  "name": "glimm-vue-monorepo",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "playground"
+  ],
+  "scripts": {
+    "build": "npm run build -w packages/glimm-vue",
+    "dev": "npm run dev -w playground",
+    "test": "npm run test -w packages/glimm-vue",
+    "typecheck": "npm run typecheck -w packages/glimm-vue",
+    "build:playground": "npm run build -w playground"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

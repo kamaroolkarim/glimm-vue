@@ -1,0 +1,15 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "declaration": false,
+    "noEmit": true,
+    "types": ["vite/client"],
+    "paths": {
+      "glimm-vue/router": ["../packages/glimm-vue/src/router.ts"],
+      "glimm-vue/vue": ["../packages/glimm-vue/src/vue.ts"],
+      "glimm-vue": ["../packages/glimm-vue/src/index.ts"]
+    }
+  },
+  "include": ["src/**/*.ts", "src/**/*.vue", "vite.config.ts"]
+}

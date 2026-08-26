@@ -1,0 +1,7 @@
+:root {
+  --font-geist-mono: 'Geist Mono';
+}
+
+html {
+  scroll-behavior: smooth;
+}

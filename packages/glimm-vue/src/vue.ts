@@ -1,0 +1,8 @@
+export { EASINGS } from './core/easings'
+export { PALETTES } from './core/palettes'
+export { GlimmProvider } from './vue/GlimmProvider'
+export { useGlimm } from './vue/useGlimm'
+export type { GlimmDefaults, SweepFn } from './vue/context'
+export type { Direction, SweepHandle, SweepOptions } from './core/types'
+export type { EasingName } from './core/easings'
+export type { Palette, PaletteName } from './core/palettes'
