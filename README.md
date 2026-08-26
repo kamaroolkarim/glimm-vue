@@ -156,6 +156,10 @@ npm run dev         # playground (Vite)
 
 ### Publishing
 
+Requires the `NPM_TOKEN` repository secret (an npm *Automation* token from
+your [npmjs.com](https://www.npmjs.com) account) — set once under
+Settings → Secrets and variables → Actions.
+
 Push a version tag — or let CI pick the next version for you:
 
 ```bash
@@ -166,7 +170,8 @@ gh workflow run release -f bump=patch
 git tag v0.1.1 && git push origin v0.1.1
 ```
 
-CI runs tests, builds, publishes to GitHub Packages, and pushes the git tag.
+CI runs tests, builds with tsup, publishes to the npm registry, and pushes
+the git tag. The playground deploys to GitHub Pages on every push to main.
 
 ## Credits & license
 
