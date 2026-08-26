@@ -38,8 +38,10 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          npm version ${{ inputs.bump }} -w packages/glimm-vue
+          npm version ${{ inputs.bump }} -w packages/glimm-vue --no-git-tag-version
           NEW_V=$(node -p "require('./packages/glimm-vue/package.json').version")
+          git add -A
+          git commit -m "chore(release): v${NEW_V} [skip ci]"
           git tag "v${NEW_V}"
           git push origin HEAD:main "v${NEW_V}"
 
