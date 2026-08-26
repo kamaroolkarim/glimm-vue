@@ -1,5 +1,7 @@
 # glimm-vue
 
+[![Live demo](https://img.shields.io/badge/demo-kamaroolkarim.github.io%2Fglimm--vue-242529)](https://kamaroolkarim.github.io/glimm-vue/)
+
 WebGL **sweep transitions** for Vue 3. A Vue port of [glimm](https://glimm.dev) by Noman Ijaz (MIT). A colour band sweeps across
 the viewport, your page swaps underneath it at the midpoint, then the band fades
 out — the iOS "name drop" feel, as a page transition.
@@ -164,16 +166,17 @@ npm run dev         # playground (Vite)
 
 ### Publishing
 
-GitHub Packages publishes automatically via CI when you push a version tag
-(either style works):
+Push a version tag — or let CI pick the next version for you:
 
 ```bash
-npm version patch -w packages/glimm-vue   # creates @kamaroolkarim/glimm-vue@x.y.z tag
-git push --follow-tags
+# Option 1: fully automatic (Actions tab → Release → Run workflow → choose patch/minor/major)
+gh workflow run release -f bump=patch
 
-# or manually:
+# Option 2: manual tag
 git tag v0.1.1 && git push origin v0.1.1
 ```
+
+CI runs tests, builds, publishes to GitHub Packages, and pushes the git tag.
 
 ## Credits & license
 

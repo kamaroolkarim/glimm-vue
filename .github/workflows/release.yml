@@ -1,6 +1,17 @@
 name: Release
 
 on:
+  workflow_dispatch:
+    inputs:
+      bump:
+        description: 'Version bump'
+        required: true
+        default: patch
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
   push:
     tags:
       - 'v*'
@@ -10,15 +21,28 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
       packages: write
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
           registry-url: https://npm.pkg.github.com
+
+      - name: Bump version and tag (dispatch)
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          npm version ${{ inputs.bump }} -w packages/glimm-vue
+          NEW_V=$(node -p "require('./packages/glimm-vue/package.json').version")
+          git tag "v${NEW_V}"
+          git push origin HEAD:main "v${NEW_V}"
+
       - run: npm ci
       - run: npm run typecheck
       - run: npm test
@@ -26,3 +50,6 @@ jobs:
       - run: npm publish -w packages/glimm-vue
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Summary
+        run: echo "Published @kamaroolkarim/glimm-vue@$(node -p \"require('./packages/glimm-vue/package.json').version\")" >> $GITHUB_STEP_SUMMARY
