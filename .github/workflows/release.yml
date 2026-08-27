@@ -20,7 +20,9 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    environment: npm
+    environment:
+      name: npm
+      url: https://www.npmjs.com/package/glimm-vue
     permissions:
       contents: write
       id-token: write
