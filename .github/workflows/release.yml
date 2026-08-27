@@ -20,9 +20,10 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    environment: npm
     permissions:
       contents: write
-      packages: write
+      id-token: write
     steps:
       - uses: actions/checkout@v5
         with:
@@ -32,6 +33,7 @@ jobs:
           node-version: 22
           cache: npm
           registry-url: https://registry.npmjs.org
+      - run: npm install -g npm@latest
 
       - name: Bump version and tag (dispatch)
         if: github.event_name == 'workflow_dispatch'
@@ -52,8 +54,6 @@ jobs:
       - name: Include README in package
         run: cp README.md packages/glimm-vue/README.md
       - run: npm publish -w packages/glimm-vue
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Summary
         run: echo "Published glimm-vue@$(node -p "require('./packages/glimm-vue/package.json').version")" >> $GITHUB_STEP_SUMMARY
